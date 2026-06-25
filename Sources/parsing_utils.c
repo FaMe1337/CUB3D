@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 21:52:24 by fabio             #+#    #+#             */
-/*   Updated: 2025/05/22 16:19:24 by toferrei         ###   ########.fr       */
+/*   Updated: 2026/06/25 17:58:22 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,15 +78,16 @@ int	check_if_closed(char **map)
 	y = -1;
 	while (map[++y])
 	{
-		x = 0;
-		while (map[y][x])
+		x = -1;
+		while (map[y][++x])
 		{
 			if (map[y][x] == '0')
 			{
 				if (!map[y + 1] || x >= (int)ft_strlen(map[y + 1])
 					|| map[y + 1][x] == ' ' || map[y + 1][x] == '\n')
 					return (0);
-				if (y == 0 || !map[y - 1] || map[y - 1][x] == ' ')
+				if (!map[y][x + 1] || map[y][x + 1] == ' ' \
+					|| map[y][x + 1] == '\n')
 					return (0);
 				if (!map[y][x + 1] || map[y][x + 1] == ' ')
 					return (0);

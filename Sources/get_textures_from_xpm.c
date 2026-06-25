@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_textures_from_xpm.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 18:03:22 by toferrei          #+#    #+#             */
-/*   Updated: 2025/05/29 09:29:34 by toferrei         ###   ########.fr       */
+/*   Updated: 2026/06/25 17:53:37 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	get_textures_from_xpm(t_data *data, char **t_path, t_texture *texture)
 	i = 0;
 	while (t_path[i])
 	{
-		printf("path :%s\n", t_path[i]);
 		if (import_texture(data, t_path[i], &(texture[i])) == 0)
 			return (0);
 		i++;
